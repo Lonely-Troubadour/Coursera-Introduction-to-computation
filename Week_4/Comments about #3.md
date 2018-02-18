@@ -1,4 +1,21 @@
-#Comments about #3
+#Comments about Q3
+```
+ // 冒泡，不断比较相邻的两个数，如果顺序错了，那么就交换
+      for (int i = 0; i < 9; i++) {
+        for (int j = 1; j < 10 - i; j++) {      
+      // 与刚才的冒泡排序不同，我们不只是通过较数字的大小决定顺序
+      // 如果左边的为偶数，右边的为奇数，那么顺序也需要颠倒
+      bool leftIsEven = a[j - 1] % 2 == 0;
+      bool rightIsEven = a[j] % 2 == 0;
+      if ((leftIsEven && !rightIsEven) ||
+          (leftIsEven == rightIsEven && a[j - 1] > a[j])) {        
+        int temp = a[j];        
+        a[j] = a[j - 1];
+        a[j - 1] = temp;
+      }
+    }
+  }  
+ ```
 又是一种十分巧妙的方法，同时进行冒泡排序和奇偶分类，虽然感觉有点不太理解，但是十分值得学习这种巧妙高效的方法。 
 
 北大的编程课就是不一样，虽然只是最开始的阶段，就已经开始让同学们接触这些高级的方法了。相比之下，我实在是差远了。
